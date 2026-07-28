@@ -6,8 +6,8 @@ public class Repository {
     private String description;
     private String html_url;
     private int stargazers_count;
-    private String email;
-    private String location;
+    private Owner owner;
+
 
 
 
@@ -46,18 +46,12 @@ public class Repository {
         this.stargazers_count = stargazers_count;
     }
 
-    public String getEmail(){
-        return email;
+    public Owner getOwner(){
+        return owner;
     }
-    public void setEmail(String email){
-        this.email=email;
+    public void setOwner(Owner owner){
+        this.owner = owner;
     }
-
-    public String getLocation(){
-        return location;
-    }
-    public void setLocation(String location){
-        this.location=location;
-    }
+    
 
 }

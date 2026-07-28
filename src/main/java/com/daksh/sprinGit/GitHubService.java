@@ -36,7 +36,6 @@ public class GitHubService {
         int count=0;
 
         for(Repository repo: repositories){
-
           if(count==10){
             break;
           }
@@ -46,7 +45,15 @@ public class GitHubService {
             System.out.println("Stars       : " + repo.getStargazers_count());
             System.out.println("Description : " + repo.getDescription());
             System.out.println("Repo-Link   : " + repo.getHtml_url());
-            System.out.println("Email       : " + repo.getEmail());
+            System.out.println("Repo-Owner   :" + repo.getOwner().getLogin());
+
+            GitHubUser user = client.get()
+                                    .uri("https://api.github.com/users/" + repo.getOwner().getLogin())
+                                    .retrieve()
+                                    .body(GitHubUser.class);
+
+            System.out.println("Email      :" + (user.getEmail() != null ? user.getEmail() : "Not public"));
+            System.out.println("Location   :" + (user.getLocation() != null ? user.getLocation() : "Not Available"));
             System.out.println("-------------------------------------------------------------------------\n");
             
             try {
