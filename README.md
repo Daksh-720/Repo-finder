@@ -31,5 +31,12 @@ Prerequisites
 - Maven
 - Git
 
+## Clone the Repository
+git clone https://github.com/Daksh-720/Repo-finder.git
+cd Repo-finder
+## Run the Application
+- Using Maven:
+mvn spring-boot:run
+
   
 inspired by @losthread
