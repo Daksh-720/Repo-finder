@@ -38,5 +38,3 @@ cd Repo-finder
 - Using Maven:
 mvn spring-boot:run
 
-  
-inspired by @losthread
